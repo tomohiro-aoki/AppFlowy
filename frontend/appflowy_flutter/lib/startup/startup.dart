@@ -59,14 +59,14 @@ class FlowyRunner {
         // this task should be first task, for handling platform errors.
         // don't catch errors in test mode
         if (!mode.isUnitTest) const PlatformErrorCatcherTask(),
-        // localization
-        const InitLocalizationTask(),
         // init the app window
         const InitAppWindowTask(),
         // Init Rust SDK
         InitRustSDKTask(directory: applicationDataDirectory),
         // Load Plugins, like document, grid ...
         const PluginLoadTask(),
+        // localization
+        const InitLocalizationTask(),
 
         // init the app widget
         // ignore in test mode
